@@ -9,8 +9,23 @@
    "app": {
      "number_of_threads": 0,
      "document_root": "./dist",
+     "upload_path": "./uploads",
      "home_page": "index.html"
-   }
+   },
+   "custom_config": {
+      "lib_path":"/mnt/nfs/music/library_old/",
+      "db_path":"./db/"
+   },
+   "plugins": [
+      {
+         "name": "LibraryPlugin",
+         "dependencies": [],
+         "config": {
+            "lib_path":"/mnt/nfs/music/library_old/",
+            "db_path":"./bd/nymm.db"
+         }
+      }
+   ]
 }
 
 

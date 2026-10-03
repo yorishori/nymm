@@ -143,11 +143,12 @@ namespace library {
 
       LOG_DEBUG << "   [FILES][Function End][refreshLibrary()]";
    }
+
+   //=======================
+   //     Write Logic
+   //=======================
+   // filer scanner -> taglib -> writes to db.
 }
 
 
-//=======================
-//     Write Logic
-//=======================
 
-// filer scanner -> taglib -> writes to db.

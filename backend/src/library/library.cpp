@@ -17,7 +17,8 @@ namespace library {
       std::filesystem::path libP(libPath);
 
       if (!std::filesystem::exists(dbP)) {
-         const std::string errMsg = "Error creating [library::Library]. DB path doesn't exist: " + dbPath;
+         const std::string errMsg = "Error creating [library::Library]. DB path doesn't exist: " 
+            + dbPath + "[" + std::filesystem::absolute(dbP).string() + "]";
          
          LOG_DEBUG << "   [Library][Controlled Exception]-> " + errMsg;
          throw std::runtime_error(errMsg);
@@ -25,7 +26,7 @@ namespace library {
 
       if (!std::filesystem::exists(libP) && !std::filesystem::is_directory(libP)) {
          const std::string errMsg = "Error creating [library::Library]. Lib path doesn't exist or isn't directory: " 
-            + dbPath;
+            + libPath + "[" + std::filesystem::absolute(libP).string() + "]";
          
          LOG_DEBUG << "   [Library][Controlled Exception]-> " + errMsg;
          throw std::runtime_error(errMsg);

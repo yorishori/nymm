@@ -29,7 +29,7 @@ add_library(library
 
 target_include_directories(library
    PUBLIC
-      ${CMAKE_SOURCE_DIR}/src/include   # library.h
+      ${CMAKE_SOURCE_DIR}/src/include
    PRIVATE
       ${CMAKE_SOURCE_DIR}/src/library   # library_internal.h
       ${TAGLIB_INCLUDE_DIRS}
@@ -41,10 +41,27 @@ target_link_libraries(library
       Drogon::Drogon
 )
 
+# PROJECT [API] MODULE
+add_library(api
+   src/api/libraryController.cpp
+)
+
+target_include_directories(api
+   PUBLIC
+      ${CMAKE_SOURCE_DIR}/src/include
+)
+
+target_link_libraries(api
+   PRIVATE
+      Drogon::Drogon
+)
+
+
 # MAIN
 add_executable(backend src/main.cpp)
 target_link_libraries(backend 
    PRIVATE 
       Drogon::Drogon 
       library
+      api
 )

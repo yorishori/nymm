@@ -1,4 +1,11 @@
+# backend
 backend/build
 compile_commands.json
+
+#frontend
+frontend/node_modules
+frontend/dist
+
+# general
 bin
-tmp
+temp
